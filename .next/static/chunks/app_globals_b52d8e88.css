@@ -50,6 +50,7 @@
     --color-gray-700: oklch(.373 .034 259.733);
     --color-gray-800: oklch(.278 .033 256.848);
     --color-gray-900: oklch(.21 .034 264.665);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
     --text-2xl: 1.5rem;
@@ -412,6 +413,10 @@
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
   }
 
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
   .resize {
     resize: both;
   }
@@ -424,14 +429,30 @@
     align-items: center;
   }
 
+  .items-stretch {
+    align-items: stretch;
+  }
+
   .justify-center {
     justify-content: center;
+  }
+
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
   }
 
   :where(.space-y-4 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
+  :where(.space-x-2 > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .rounded {
@@ -447,12 +468,40 @@
     border-color: var(--color-gray-300);
   }
 
+  .border-gray-900 {
+    border-color: var(--color-gray-900);
+  }
+
+  .bg-black {
+    background-color: var(--color-black);
+  }
+
   .bg-blue-500 {
     background-color: var(--color-blue-500);
   }
 
   .bg-gray-200 {
     background-color: var(--color-gray-200);
+  }
+
+  .bg-gray-400 {
+    background-color: var(--color-gray-400);
+  }
+
+  .bg-gray-500 {
+    background-color: var(--color-gray-500);
+  }
+
+  .bg-gray-600 {
+    background-color: var(--color-gray-600);
+  }
+
+  .bg-gray-800 {
+    background-color: var(--color-gray-800);
+  }
+
+  .bg-gray-900 {
+    background-color: var(--color-gray-900);
   }
 
   .p-2 {
@@ -465,6 +514,10 @@
 
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+
+  .text-left {
+    text-align: left;
   }
 
   .text-2xl {
@@ -480,6 +533,10 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+
+  .text-black {
+    color: var(--color-black);
   }
 
   .text-green-500 {
@@ -605,6 +662,12 @@ body {
 }
 
 @property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-space-x-reverse {
   syntax: "*";
   inherits: false;
   initial-value: 0;

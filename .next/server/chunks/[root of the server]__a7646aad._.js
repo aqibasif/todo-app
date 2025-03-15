@@ -160,10 +160,8 @@ async function POST(req) {
 }
 async function GET() {
     try {
-        console.log("CALLING API");
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$lib$2f$mongodb$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["connectDB"])();
         const todos = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$lib$2f$models$2f$Todo$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["Todo"].find();
-        console.log("API CALLED", todos);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             todos
         }, {
