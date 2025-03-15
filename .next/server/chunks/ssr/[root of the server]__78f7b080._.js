@@ -13,58 +13,6 @@ module.exports = mod;
 
 var { g: global, d: __dirname } = __turbopack_context__;
 {
-// "use client";
-// import { useState } from "react";
-// export default function Home() {
-//   const [name, setName] = useState("");
-//   const [price, setPrice] = useState("");
-//   const [message, setMessage] = useState("");
-//   const addTodo = async () => {
-//     if (!name || !price) {
-//       setMessage("Both fields are required!");
-//       return;
-//     }
-//     const response = await fetch("/api/todo", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ name, price: Number(price) }),
-//     });
-//     const data = await response.json();
-//     if (response.ok) {
-//       setMessage("Todo added successfully!");
-//       setName("");
-//       setPrice("");
-//     } else {
-//       setMessage(data.error);
-//     }
-//   };
-//   return (
-//     <div className='flex flex-col items-center justify-center h-screen space-y-4'>
-//       <h1 className='text-2xl font-bold'>Todo App</h1>
-//       <input
-//         type='text'
-//         placeholder='Name'
-//         className='border p-2 rounded'
-//         value={name}
-//         onChange={(e) => setName(e.target.value)}
-//       />
-//       <input
-//         type='number'
-//         placeholder='Price'
-//         className='border p-2 rounded'
-//         value={price}
-//         onChange={(e) => setPrice(e.target.value)}
-//       />
-//       <button
-//         onClick={addTodo}
-//         className='bg-blue-500 text-white px-4 py-2 rounded'
-//       >
-//         Add Todo
-//       </button>
-//       {message && <p className='text-green-500'>{message}</p>}
-//     </div>
-//   );
-// }
 __turbopack_context__.s({
     "default": (()=>Home)
 });
@@ -122,7 +70,7 @@ function Home() {
                 children: "Todo App"
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 111,
+                lineNumber: 51,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -133,7 +81,7 @@ function Home() {
                 onChange: (e)=>setName(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 113,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -144,7 +92,7 @@ function Home() {
                 onChange: (e)=>setPrice(e.target.value)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 120,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -153,7 +101,7 @@ function Home() {
                 children: "Add Todo"
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 128,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -161,7 +109,7 @@ function Home() {
                 children: message
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 132,
+                lineNumber: 75,
                 columnNumber: 19
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
@@ -176,7 +124,7 @@ function Home() {
                                     children: "Name"
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 81,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -184,18 +132,18 @@ function Home() {
                                     children: "Price"
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
-                                    lineNumber: 139,
+                                    lineNumber: 82,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/page.tsx",
-                            lineNumber: 137,
+                            lineNumber: 80,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 136,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -206,7 +154,7 @@ function Home() {
                                         children: todo.name
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 88,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -217,30 +165,30 @@ function Home() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/page.tsx",
-                                        lineNumber: 146,
+                                        lineNumber: 89,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, todo._id, true, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 144,
+                                lineNumber: 87,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 142,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 135,
+                lineNumber: 78,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 110,
+        lineNumber: 50,
         columnNumber: 5
     }, this);
 }

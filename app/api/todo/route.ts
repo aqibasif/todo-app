@@ -32,8 +32,10 @@ export async function POST(req: Request) {
 // New GET handler to fetch all Todos
 export async function GET() {
   try {
+    console.log("CALLING API");
     await connectDB();
     const todos = await Todo.find();
+    console.log("API CALLED", todos);
 
     return NextResponse.json({ todos }, { status: 200 });
   } catch (error) {

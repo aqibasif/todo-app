@@ -75,7 +75,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 if (!MONGODB_URI) {
     throw new Error("Please define the MONGODB_URI environment variable");
 }
-let cached = global.mongoose || {
+const cached = global.mongoose || {
     conn: null,
     promise: null
 };
@@ -151,7 +151,8 @@ async function POST(req) {
         });
     } catch (error) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: "Server error"
+            error: "Server error",
+            errorObj: error
         }, {
             status: 500
         });
@@ -159,8 +160,10 @@ async function POST(req) {
 }
 async function GET() {
     try {
+        console.log("CALLING API");
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$lib$2f$mongodb$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["connectDB"])();
         const todos = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$api$2f$lib$2f$models$2f$Todo$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["Todo"].find();
+        console.log("API CALLED", todos);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             todos
         }, {
@@ -168,7 +171,8 @@ async function GET() {
         });
     } catch (error) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: "Server error"
+            error: "Server error",
+            errorObj: error
         }, {
             status: 500
         });
