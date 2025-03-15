@@ -39,9 +39,11 @@ export default function Home() {
 
     const data = await response.json();
     if (response.ok) {
-      setMessage("Todo added successfully!");
+      setMessage("Entry added successfully!");
       setName("");
       setPrice("");
+
+      setTimeout(() => setMessage(""), 2000);
       fetchTodos(); // Update table after adding a new Todo
     } else {
       setMessage(data.error);
@@ -49,7 +51,13 @@ export default function Home() {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen space-y-4'>
+    <div
+      className='flex flex-col items-center justify-center min-h-screen space-y-4'
+      style={{
+        backgroundImage:
+          "radial-gradient(circle 715px at 23.4% -21.8%,#294590 .2%,#02112a 100.2%)",
+      }}
+    >
       <h1 className='text-2xl font-bold'>Grocery App</h1>
 
       <form
@@ -79,27 +87,48 @@ export default function Home() {
         </button>
       </form>
 
-      {message && <p className='text-green-500'>{message}</p>}
+      {message && (
+        <p
+          className={`text-${
+            message?.includes("successfully") ? "green" : "red"
+          }-500`}
+        >
+          {message}
+        </p>
+      )}
 
       {/* Todo Table */}
       <table className='border-collapse border border-gray-300 w-2/3 mt-4'>
         <thead>
           <tr className='bg-gray-200'>
-            <th className='border bg-gray-600 text-left border-gray-300 p-2'>
-              Item
-            </th>
-            <th className='border bg-gray-600 text-left border-gray-300 p-2'>
-              Price
-            </th>
+            {["Item", "Price"].map((title) => (
+              <th
+                key={title}
+                className='border bg-gray-600 text-left border-gray-300 p-2'
+              >
+                {title}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
           {todos.map((todo) => (
             <tr key={todo._id}>
               <td className='border border-gray-300 p-2'>{todo.name}</td>
-              <td className='border border-gray-300 p-2'>${todo.price}</td>
+              <td className='border border-gray-300 p-2'>
+                Rs: {todo.price?.toLocaleString()}
+              </td>
             </tr>
           ))}
+          <tr>
+            <td className='bg-gray-800 border border-gray-300 p-2'>Total</td>
+            <td className='bg-gray-800 border border-gray-300 p-2'>
+              Rs:{" "}
+              {todos
+                .reduce((acc, todo) => acc + todo.price, 0)
+                ?.toLocaleString()}
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
