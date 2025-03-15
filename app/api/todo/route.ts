@@ -22,7 +22,10 @@ export async function POST(req: Request) {
       { status: 201 }
     );
   } catch (error) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Server error", errorObj: error },
+      { status: 500 }
+    );
   }
 }
 
@@ -34,6 +37,9 @@ export async function GET() {
 
     return NextResponse.json({ todos }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Server error", errorObj: error },
+      { status: 500 }
+    );
   }
 }
